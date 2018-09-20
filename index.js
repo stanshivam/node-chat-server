@@ -4,11 +4,10 @@ var server = http.createServer((req, res) => {
     res.end('<h1>Hello NodeJS</h1>');
 });
 server.listen(3000,() => console.log('Server running on port 3000'));
-const conn = require('./db/conn');
+const conn = require('./db').conn;
 const io = require('socket.io')(server);
-const { User } = require('./db/models/User');
-const { Conversation } = require('./db/models/Conversation');
-const { Message } = require('./db/models/Message');
+
+const { User, Conversation, Message } = require('./db').models;
 conn.sync({ logging: false, force: true });
 const mobileSockets = {};
 

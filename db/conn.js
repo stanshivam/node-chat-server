@@ -1,4 +1,4 @@
 const Sequelize = require('sequelize');
-const conn = new Sequelize('postgres://localhost:5432/chat_app_db', 'postgres', '123', {host: 'localhost', dialect: 'postgres', "port": 5423 });
+const conn = new Sequelize("postgres://stanshivam:12345@localhost:5432/chat_app_db", {host: 'localhost', dialect: 'postgres'});
 
 module.exports = conn;
